@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("@discordjs/builders");
+const { EmbedBuilder } = require("discord.js");
 const {
   ContextMenuCommandBuilder,
   ApplicationCommandType,
@@ -14,7 +14,7 @@ module.exports = {
     )
     .setDMPermission(false),
   async execute(interaction) {
-    async function sendMessage(message, edit) {
+    async function sendMessage(message, edit,img) {
       if (!edit) {
         await interaction.reply({
           content: "",
@@ -25,7 +25,7 @@ module.exports = {
         await interaction.editReply({
           content: "",
           ephemeral: true,
-          embeds: [new EmbedBuilder().setColor("Blue").setDescription(message)],
+          embeds: [new EmbedBuilder().setColor("Blue").setDescription(message).setImage(img || "")],
         });
       }
     }
@@ -58,6 +58,6 @@ module.exports = {
 
     if (error) return;
 
-    await sendMessage(`🌝 دزدی شما موفق بود. ${created.url}`, true);
+    await sendMessage(`🌝 دزدی شما موفق بود.`, true, created.url);
   },
 };

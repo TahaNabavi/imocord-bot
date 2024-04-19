@@ -3,39 +3,38 @@ const { clientId, token, guildId } = require("../../config.json");
 const fs = require("node:fs");
 const path = require("node:path");
 
-function getCommand(path,commands){
-  const commandFiles = fs
-    .readdirSync(path)
-    .filter((file) => file.endsWith(".js"));
-
-  for (const file of commandFiles) {
-    const filePath = path.join(path, file);
-    const command = require(filePath);
-
-    if ("data" in command && "execute" in command) {
-      commands.push(command.data.toJSON());
-    } else {
-      console.error(
-        `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
-      );
-    }
-}
-
 module.exports = function CommandHandler() {
+  function getCommand(mypath, commands) {
+    const commandFiles = fs
+      .readdirSync(mypath)
+      .filter((file) => file.endsWith(".js"));
+
+    for (const file of commandFiles) {
+      const filePath = path.join(mypath, file);
+      const command = require(filePath);
+
+      if ("data" in command && "execute" in command) {
+        commands.push(command.data.toJSON());
+      } else {
+        console.error(
+          `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
+        );
+      }
+    }
+  }
+
   const commands = [];
 
-  const slashPath = path.join(__dirname, ".", "slash"); 
-  const modPath = path.join(__dirname, ".", "mod"); 
+  const slashPath = path.join(__dirname, ".", "slash");
+  const modPath = path.join(__dirname, ".", "mod");
 
   if (!fs.existsSync(slashPath) || !fs.existsSync(modPath)) {
     console.log(`[ERROR] Directory not found for adding commands`);
     return;
   }
 
-  getCommand(slashPath,commands)
-  getCommand(modPath,commands)
-
-  }
+  getCommand(slashPath, commands);
+  getCommand(modPath, commands);
 
   const rest = new REST().setToken(token);
 
@@ -45,10 +44,12 @@ module.exports = function CommandHandler() {
         `\nStarted refreshing ${commands.length} application (/) commands.`
       );
 
-      const data = await rest.put(
-        Routes.applicationCommands(clientId),
-        { body: commands }
-      );
+      // const data = await rest.put(Routes.applicationCommands(clientId), {
+      //   body: commands,
+      // });
+      const data = await rest.put(Routes.applicationGuildCommands(clientId,guildId), {
+        body: commands,
+      });
 
       console.warn(
         `Successfully reloaded ${data.length} application (/) commands.\n`

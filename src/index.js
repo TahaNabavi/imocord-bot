@@ -6,6 +6,7 @@ const {
 } = require("discord.js");
 const config = require("../config.json");
 const CommandHandler = require("./commands/handler");
+const { default: axios } = require("axios");
 
 const SCping = require("./commands/slash/ping");
 const SCemoji = require("./commands/slash/emoji");
@@ -14,7 +15,11 @@ const SCpack = require("./commands/slash/pack");
 const SCcustompack = require("./commands/slash/customPack");
 const SCwebsite = require("./commands/slash/website");
 const SCdiscord = require("./commands/slash/discord");
-const { default: axios } = require("axios");
+const SChelp = require("./commands/slash/help");
+
+const SCObanner = require("./commands/slash/Obanner");
+
+const MCstealsticker = require("./commands/mod/stealsticker");
 
 CommandHandler();
 
@@ -29,7 +34,7 @@ const client = new Client({
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`Ready! Logged in as ${readyClient.user.tag}`);
-  
+
   setInterval(async () => {
     const wh = Math.floor(Math.random() * 7);
 
@@ -90,25 +95,35 @@ client.once(Events.ClientReady, (readyClient) => {
 });
 
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) return;
+  if (interaction.isMessageContextMenuCommand()) {
+    const { commandName, options } = interaction;
 
-  const { commandName, options } = interaction;
+    if (commandName === "Steal sticker") {
+      MCstealsticker.execute(interaction);
+    }
+  } else if (interaction.isCommand()) {
+    const { commandName, options } = interaction;
 
-  if (commandName === "ping") {
-    SCping.execute(interaction);
-  } else if (commandName === "emoji") {
-    SCemoji.execute(interaction);
-  } else if (commandName === "sticker") {
-    SCsticker.execute(interaction);
-  } else if (commandName === "pack") {
-    SCpack.execute(interaction);
-  } else if (commandName === "custom-pack") {
-    SCcustompack.execute(interaction, client);
-  } else if (commandName === "website") {
-    SCwebsite.execute(interaction);
-  } else if (commandName === "discord") {
-    SCdiscord.execute(interaction);
-  }
+    if (commandName === "ping") {
+      SCping.execute(interaction);
+    } else if (commandName === "emoji") {
+      SCemoji.execute(interaction);
+    } else if (commandName === "sticker") {
+      SCsticker.execute(interaction);
+    } else if (commandName === "pack") {
+      SCpack.execute(interaction);
+    } else if (commandName === "custom-pack") {
+      SCcustompack.execute(interaction, client);
+    } else if (commandName === "website") {
+      SCwebsite.execute(interaction);
+    } else if (commandName === "discord") {
+      SCdiscord.execute(interaction);
+    } else if (commandName === "help") {
+      SChelp.execute(interaction);
+    } else if (commandName === "change-bot-banner") {
+      SCObanner.execute(interaction, client);
+    } else return;
+  } else return;
 });
 
 client.login(config.token);
