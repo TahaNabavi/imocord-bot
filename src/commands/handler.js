@@ -44,10 +44,7 @@ module.exports = function CommandHandler() {
         `\nStarted refreshing ${commands.length} application (/) commands.`
       );
 
-      // const data = await rest.put(Routes.applicationCommands(clientId), {
-      //   body: commands,
-      // });
-      const data = await rest.put(Routes.applicationGuildCommands(clientId,guildId), {
+      const data = await rest.put(Routes.applicationCommands(clientId), {
         body: commands,
       });
 
