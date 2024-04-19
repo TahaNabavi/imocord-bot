@@ -14,7 +14,7 @@ module.exports = {
     )
     .setDMPermission(false),
   async execute(interaction) {
-    async function sendMessage(message, edit,img) {
+    async function sendMessage(message, edit) {
       if (!edit) {
         await interaction.reply({
           content: "",
@@ -25,7 +25,7 @@ module.exports = {
         await interaction.editReply({
           content: "",
           ephemeral: true,
-          embeds: [new EmbedBuilder().setColor("Blue").setDescription(message).setImage(img || "")],
+          embeds: [new EmbedBuilder().setColor("Blue").setDescription(message)],
         });
       }
     }
