@@ -16,12 +16,7 @@ const SCwebsite = require("./commands/slash/website");
 const SCdiscord = require("./commands/slash/discord");
 const { default: axios } = require("axios");
 
-// const rest = new REST().setToken(config.token);
-
-// rest.put(Routes.applicationGuildCommands(config.clientId, config.guildId), { body: [] })
-// 	.then(() => console.log('Successfully deleted all guild commands.'))
-// 	.catch(console.error);
-// CommandHandler();
+CommandHandler();
 
 const client = new Client({
   intents: [
