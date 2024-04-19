@@ -3,25 +3,14 @@ const { clientId, token, guildId } = require("../../config.json");
 const fs = require("node:fs");
 const path = require("node:path");
 
-module.exports = function CommandHandler() {
-  const commands = [];
-
-  // Define the path to the commands directory
-  const foldersPath = path.join(__dirname, ".", "slash"); // Make sure 'slash' directory exists
-
-  // Check if the directory exists
-  if (!fs.existsSync(foldersPath)) {
-    console.log(`[ERROR] Directory not found: ${foldersPath}`);
-    return;
-  }
-
+function getCommand(path,commands){
   const commandFiles = fs
-    .readdirSync(foldersPath)
+    .readdirSync(path)
     .filter((file) => file.endsWith(".js"));
 
   for (const file of commandFiles) {
-    const filePath = path.join(foldersPath, file);
-    const command = require(filePath); // Make sure this file exists and is valid
+    const filePath = path.join(path, file);
+    const command = require(filePath);
 
     if ("data" in command && "execute" in command) {
       commands.push(command.data.toJSON());
@@ -30,6 +19,22 @@ module.exports = function CommandHandler() {
         `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
       );
     }
+}
+
+module.exports = function CommandHandler() {
+  const commands = [];
+
+  const slashPath = path.join(__dirname, ".", "slash"); 
+  const modPath = path.join(__dirname, ".", "mod"); 
+
+  if (!fs.existsSync(slashPath) || !fs.existsSync(modPath)) {
+    console.log(`[ERROR] Directory not found for adding commands`);
+    return;
+  }
+
+  getCommand(slashPath,commands)
+  getCommand(modPath,commands)
+
   }
 
   const rest = new REST().setToken(token);
@@ -41,7 +46,7 @@ module.exports = function CommandHandler() {
       );
 
       const data = await rest.put(
-        Routes.applicationGuildCommands(clientId, guildId),
+        Routes.applicationCommands(clientId),
         { body: commands }
       );
 

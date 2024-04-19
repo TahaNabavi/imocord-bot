@@ -162,7 +162,7 @@ module.exports = {
             content: "",
             embeds: [
               new EmbedBuilder()
-                .setColor("DarkRed")
+                .setColor("Blurple")
                 .setDescription(
                   `**آپلود تمام شد\n\nتعداد کل : \`\`${itemsUrl.length}\`\` \n موفق : \`\`${tr}\`\` \n ناموفق : \`\`${fa}\`\`**`
                 )
