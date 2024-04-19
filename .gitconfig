@@ -1,0 +1,2 @@
+[alias]
+    addall = "!git add -u :/ && git reset node_modules/"

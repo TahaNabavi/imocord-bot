@@ -67,7 +67,6 @@ module.exports = {
         });
       })
       .catch(function (error) {
-        console.warn(error);
         interaction.editReply({
           content: "",
           embeds: [
@@ -110,7 +109,6 @@ module.exports = {
             const response = await axios.get(
               `https://imocord.ir/api/get-link/emoji/${it}`
             );
-            console.log(response.data);
             itemsUrl.push(response.data);
           }
 

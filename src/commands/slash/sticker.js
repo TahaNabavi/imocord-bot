@@ -66,7 +66,6 @@ module.exports = {
         });
       })
       .catch(function (error) {
-        console.warn(error);
         interaction.editReply({
           content: "",
           embeds: [
@@ -89,7 +88,6 @@ module.exports = {
     const res = await interaction.guild.stickers
       .create({ file: itemUrl, name: "imocord" })
       .catch((err) => {
-        console.log(err);
         interaction.editReply({
           content: "",
           embeds: [
