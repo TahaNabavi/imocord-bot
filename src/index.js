@@ -91,7 +91,7 @@ client.once(Events.ClientReady, (readyClient) => {
         type: ActivityType.Watching,
       });
     }
-  }, 5000);
+  }, 10000);
 });
 
 client.on("interactionCreate", async (interaction) => {
