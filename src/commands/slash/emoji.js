@@ -88,20 +88,36 @@ module.exports = {
     const res = await interaction.guild.emojis
       .create({ attachment: itemUrl, name: "imocord" })
       .catch((err) => {
-        interaction.editReply({
-          content: "",
-          embeds: [
-            new EmbedBuilder()
-              .setColor("DarkRed")
-              .setDescription(
-                "**آپلود ناموفق بود**\n دلایل رخ دادن:\n1.دسترسی نداشتن بات به آپلود در سرور\n2.نبودن جای خالی برا آپلود ایموجی\n3.وجود نداشتن ایموجی"
-              )
-              .setFooter({
-                text: `Requested by ${interaction.member.user.username}`,
-                iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
-              }),
-          ],
-        });
+        if (err.code == 30039) {
+          interaction.editReply({
+            content: "",
+            embeds: [
+              new EmbedBuilder()
+                .setColor("DarkRed")
+                .setDescription("**شما جای خالی برای آپلود ایموجی ندارید**")
+                .setFooter({
+                  text: `Requested by ${interaction.member.user.username}`,
+                  iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
+                }),
+            ],
+          });
+        } else {
+          interaction.editReply({
+            content: "",
+            embeds: [
+              new EmbedBuilder()
+                .setColor("DarkRed")
+                .setDescription(
+                  "**آپلود ناموفق بود**\n دلایل رخ دادن:\n1.دسترسی نداشتن بات به آپلود در سرور\n2.وجود نداشتن ایموجی"
+                )
+                .setFooter({
+                  text: `Requested by ${interaction.member.user.username}`,
+                  iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
+                }),
+            ],
+          });
+        }
+
         return false;
       });
 
