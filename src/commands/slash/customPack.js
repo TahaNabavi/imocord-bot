@@ -69,7 +69,6 @@ module.exports = {
               .setAuthor({
                 name: "Imocord",
                 iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
-                url: "https://imocord.ir/s/pack/" + itemId,
               })
               .setFooter({
                 text: `Requested by ${interaction.member.user.id}`,
@@ -90,7 +89,6 @@ module.exports = {
               .setAuthor({
                 name: "Imocord",
                 iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
-                url: "https://imocord.ir/s/pack/" + itemId,
               })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
@@ -130,7 +128,6 @@ module.exports = {
             .setAuthor({
               name: "Imocord",
               iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
-              url: "https://imocord.ir/s/pack/" + itemId,
             })
             .setFooter({
               text: `Requested by ${interaction.member.user.username}`,
@@ -163,7 +160,6 @@ module.exports = {
                 .setAuthor({
                   name: "Imocord",
                   iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
-                  url: "https://imocord.ir/s/pack/" + itemId,
                 })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
@@ -197,7 +193,6 @@ module.exports = {
                 .setAuthor({
                   name: "Imocord",
                   iconURL: "https://s8.uupload.ir/files/2767-yes_yks9.png",
-                  url: "https://imocord.ir/s/pack/" + itemId,
                 })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
