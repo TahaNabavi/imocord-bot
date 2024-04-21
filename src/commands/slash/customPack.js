@@ -23,7 +23,7 @@ module.exports = {
             .setDescription("**شما دسترسی به آپلود ایموجی را ندارید**")
             .setAuthor({
               name: "Imocord",
-              url: "https://imocord.ir/s/pack/" + itemId,
+              iconURL: "https://s8.uupload.ir/files/37496-alert_r8ac.gif",
             })
             .setFooter({
               text: `Imocord`,
@@ -43,7 +43,7 @@ module.exports = {
           )
           .setAuthor({
             name: "Imocord",
-            url: "https://imocord.ir/s/pack//" + itemId,
+            iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
           })
           .setFooter({
             text: `Requested by ${interaction.member.user.username}`,
@@ -68,7 +68,8 @@ module.exports = {
               )
               .setAuthor({
                 name: "Imocord",
-                url: "https://imocord.ir/s/pack//" + itemId,
+                iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+                url: "https://imocord.ir/s/pack/" + itemId,
               })
               .setFooter({
                 text: `Requested by ${interaction.member.user.id}`,
@@ -89,7 +90,7 @@ module.exports = {
               .setAuthor({
                 name: "Imocord",
                 iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
-                url: "https://imocord.ir/s/pack//" + itemId,
+                url: "https://imocord.ir/s/pack/" + itemId,
               })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
@@ -128,6 +129,7 @@ module.exports = {
             .setDescription("**شما هیچ ایموجی ای ذخیره نکرده اید**")
             .setAuthor({
               name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
               url: "https://imocord.ir/s/pack/" + itemId,
             })
             .setFooter({
@@ -160,7 +162,8 @@ module.exports = {
                 )
                 .setAuthor({
                   name: "Imocord",
-                  url: "https://imocord.ir/s/pack//" + itemId,
+                  iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+                  url: "https://imocord.ir/s/pack/" + itemId,
                 })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
@@ -193,6 +196,7 @@ module.exports = {
                 )
                 .setAuthor({
                   name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/2767-yes_yks9.png",
                   url: "https://imocord.ir/s/pack/" + itemId,
                 })
                 .setFooter({
