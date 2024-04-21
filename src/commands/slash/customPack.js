@@ -21,6 +21,10 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkRed")
             .setDescription("**شما دسترسی به آپلود ایموجی را ندارید**")
+            .setAuthor({
+              name: "Imocord",
+              url: "https://imocord.ir/s/pack/" + itemId,
+            })
             .setFooter({
               text: `Imocord`,
             }),
@@ -37,6 +41,10 @@ module.exports = {
               interaction.member.user.username +
               "``**"
           )
+          .setAuthor({
+            name: "Imocord",
+            url: "https://imocord.ir/s/pack//" + itemId,
+          })
           .setFooter({
             text: `Requested by ${interaction.member.user.username}`,
             iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -58,6 +66,10 @@ module.exports = {
               .setDescription(
                 "**پک با موفقیت دانلود شد در حال آپلود روی سرور**"
               )
+              .setAuthor({
+                name: "Imocord",
+                url: "https://imocord.ir/s/pack//" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.id}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -74,6 +86,11 @@ module.exports = {
               .setDescription(
                 "**دریافت پک ناموفق بود**\n\nلطفا با پشتیبانی تماس بگیرید"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                url: "https://imocord.ir/s/pack//" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -102,19 +119,23 @@ module.exports = {
             }),
         ],
       });
-    }else if (itemsId == 444){
-        return interaction.editReply({
-            content: "",
-            embeds: [
-              new EmbedBuilder()
-                .setColor("DarkRed")
-                .setDescription("**شما هیچ ایموجی ای ذخیره نکرده اید**")
-                .setFooter({
-                  text: `Requested by ${interaction.member.user.username}`,
-                  iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
-                }),
-            ],
-          });
+    } else if (itemsId == 444) {
+      return interaction.editReply({
+        content: "",
+        embeds: [
+          new EmbedBuilder()
+            .setColor("DarkRed")
+            .setDescription("**شما هیچ ایموجی ای ذخیره نکرده اید**")
+            .setAuthor({
+              name: "Imocord",
+              url: "https://imocord.ir/s/pack/" + itemId,
+            })
+            .setFooter({
+              text: `Requested by ${interaction.member.user.username}`,
+              iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
+            }),
+        ],
+      });
     } else {
       let itemsUrl = [];
       let tr = 0;
@@ -137,6 +158,10 @@ module.exports = {
                 .setDescription(
                   `**بارگیری ایموجی ها موفق بود.درحال آپلود \`\`length : ${itemsUrl.length}\`\`**`
                 )
+                .setAuthor({
+                  name: "Imocord",
+                  url: "https://imocord.ir/s/pack//" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -166,6 +191,10 @@ module.exports = {
                 .setDescription(
                   `**آپلود تمام شد\n\nتعداد کل : \`\`${itemsUrl.length}\`\` \n موفق : \`\`${tr}\`\` \n ناموفق : \`\`${fa}\`\`**`
                 )
+                .setAuthor({
+                  name: "Imocord",
+                  url: "https://imocord.ir/s/pack/" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,

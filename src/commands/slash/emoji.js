@@ -24,6 +24,11 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkRed")
             .setDescription("**شما دسترسی به آپلود ایموجی را ندارید**")
+            .setAuthor({
+              name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/37496-alert_r8ac.gif",
+              url: "https://imocord.ir/s/emoji/" + itemId,
+            })
             .setFooter({
               text: `Imocord`,
             }),
@@ -38,6 +43,11 @@ module.exports = {
         new EmbedBuilder()
           .setColor("DarkPurple")
           .setDescription("**درحال دریافت ایموجی ``ID : " + itemId + "``**")
+          .setAuthor({
+            name: "Imocord",
+            iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+            url: "https://imocord.ir/s/emoji/" + itemId,
+          })
           .setFooter({
             text: `Requested by ${interaction.member.user.username}`,
             iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -58,6 +68,11 @@ module.exports = {
               .setDescription(
                 "**ایموجی با موفقیت دانلود شد در حال آپلود روی سرور**"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+                url: "https://imocord.ir/s/emoji/" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -74,6 +89,11 @@ module.exports = {
               .setDescription(
                 "**دریافت ایموجی ناموفق بود**\n\nلطفا با پشتیبانی تماس بگیرید"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                url: "https://imocord.ir/s/emoji/" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -88,13 +108,18 @@ module.exports = {
     const res = await interaction.guild.emojis
       .create({ attachment: itemUrl, name: "imocord" })
       .catch((err) => {
-        if (err.code == 30039) {
+        if (err.code == 30008) {
           interaction.editReply({
             content: "",
             embeds: [
               new EmbedBuilder()
                 .setColor("DarkRed")
                 .setDescription("**شما جای خالی برای آپلود ایموجی ندارید**")
+                .setAuthor({
+                  name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                  url: "https://imocord.ir/s/emoji/" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -108,8 +133,13 @@ module.exports = {
               new EmbedBuilder()
                 .setColor("DarkRed")
                 .setDescription(
-                  "**آپلود ناموفق بود**\n دلایل رخ دادن:\n1.دسترسی نداشتن بات به آپلود در سرور\n2.وجود نداشتن ایموجی"
+                  "**ایموجی وجود ندارد**"
                 )
+                .setAuthor({
+                  name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                  url: "https://imocord.ir/s/emoji/" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -130,6 +160,11 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkGreen")
             .setDescription(`**ایموجی با موفقیت اضافه شد** ${res}`)
+            .setAuthor({
+              name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/2767-yes_yks9.png",
+              url: "https://imocord.ir/s/emoji/" + itemId,
+            })
             .setFooter({
               text: `Requested by ${interaction.member.user.username}`,
               iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,

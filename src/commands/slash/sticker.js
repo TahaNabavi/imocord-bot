@@ -15,7 +15,7 @@ module.exports = {
   async execute(interaction) {
     if (
       !interaction.member.permissions.has(
-        PermissionsBitField.Flags.ManageEmojisAndStickers
+        PermissionsBitField.Flags.ManagestickersAndStickers
       )
     )
       return await interaction.reply({
@@ -24,6 +24,11 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkRed")
             .setDescription("**شما دسترسی به آپلود استیکر را ندارید**")
+            .setAuthor({
+              name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/37496-alert_r8ac.gif",
+              url: "https://imocord.ir/s/sticker/" + itemId,
+            })
             .setFooter({
               text: `Imocord`,
             }),
@@ -38,6 +43,11 @@ module.exports = {
         new EmbedBuilder()
           .setColor("DarkPurple")
           .setDescription("**درحال دریافت استیکر ``ID : " + itemId + "``**")
+          .setAuthor({
+            name: "Imocord",
+            iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+            url: "https://imocord.ir/s/sticker//" + itemId,
+          })
           .setFooter({
             text: `Requested by ${interaction.member.user.username}`,
             iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -58,6 +68,11 @@ module.exports = {
               .setDescription(
                 "**استیکر با موفقیت دانلود شد در حال آپلود روی سرور**"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+                url: "https://imocord.ir/s/sticker//" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -74,6 +89,11 @@ module.exports = {
               .setDescription(
                 "**دریافت استیکر ناموفق بود**\n\nلطفا با پشتیبانی تماس بگیرید"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                url: "https://imocord.ir/s/sticker//" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -95,6 +115,11 @@ module.exports = {
               new EmbedBuilder()
                 .setColor("DarkRed")
                 .setDescription("**شما جای خالی برای آپلود استیکر ندارید**")
+                .setAuthor({
+                  name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                  url: "https://imocord.ir/s/sticker/" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -108,8 +133,13 @@ module.exports = {
               new EmbedBuilder()
                 .setColor("DarkRed")
                 .setDescription(
-                  "**آپلود ناموفق بود**\n دلایل رخ دادن:\n1.دسترسی نداشتن بات به آپلود در سرور\n2.وجود نداشتن استیکر"
+                  "**استیکر وجود ندارد**"
                 )
+                .setAuthor({
+                  name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                  url: "https://imocord.ir/s/sticker/" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -129,6 +159,11 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkGreen")
             .setDescription(`**استیکر با موفقیت اضافه شد**`)
+            .setAuthor({
+              name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/2767-yes_yks9.png",
+              url: "https://imocord.ir/s/sticker/" + itemId,
+            })
             .setFooter({
               text: `Requested by ${interaction.member.user.username}`,
               iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,

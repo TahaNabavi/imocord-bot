@@ -24,6 +24,11 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkRed")
             .setDescription("**شما دسترسی به آپلود ایموجی را ندارید**")
+            .setAuthor({
+              name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/37496-alert_r8ac.gif",
+              url: "https://imocord.ir/s/pack/" + itemId,
+            })
             .setFooter({
               text: `Imocord`,
             }),
@@ -38,6 +43,11 @@ module.exports = {
         new EmbedBuilder()
           .setColor("DarkPurple")
           .setDescription("**درحال دریافت پک ``ID : " + itemId + "``**")
+          .setAuthor({
+            name: "Imocord",
+            iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+            url: "https://imocord.ir/s/pack//" + itemId,
+          })
           .setFooter({
             text: `Requested by ${interaction.member.user.username}`,
             iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -59,6 +69,11 @@ module.exports = {
               .setDescription(
                 "**پک با موفقیت دانلود شد در حال آپلود روی سرور**"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+                url: "https://imocord.ir/s/pack//" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -75,6 +90,11 @@ module.exports = {
               .setDescription(
                 "**دریافت پک ناموفق بود**\n\nلطفا با پشتیبانی تماس بگیرید"
               )
+              .setAuthor({
+                name: "Imocord",
+                iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+                url: "https://imocord.ir/s/pack//" + itemId,
+              })
               .setFooter({
                 text: `Requested by ${interaction.member.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -92,6 +112,11 @@ module.exports = {
           new EmbedBuilder()
             .setColor("DarkRed")
             .setDescription("**پک مورد نظر یافت نشد**")
+            .setAuthor({
+              name: "Imocord",
+              iconURL: "https://s8.uupload.ir/files/1781-exclamation_kulo.png",
+              url: "https://imocord.ir/s/pack/" + itemId,
+            })
             .setFooter({
               text: `Requested by ${interaction.member.user.username}`,
               iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -120,6 +145,11 @@ module.exports = {
                 .setDescription(
                   `**بارگیری ایموجی ها موفق بود.درحال آپلود \`\`length : ${itemsUrl.length}\`\`**`
                 )
+                .setAuthor({
+                  name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/9435-minecraft-xp-orb_oaua.gif",
+                  url: "https://imocord.ir/s/pack//" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
@@ -149,6 +179,11 @@ module.exports = {
                 .setDescription(
                   `**آپلود تمام شد\n\nتعداد کل : \`\`${itemsUrl.length}\`\` \n موفق : \`\`${tr}\`\` \n ناموفق : \`\`${fa}\`\`**`
                 )
+                .setAuthor({
+                  name: "Imocord",
+                  iconURL: "https://s8.uupload.ir/files/2767-yes_yks9.png",
+                  url: "https://imocord.ir/s/pack/" + itemId,
+                })
                 .setFooter({
                   text: `Requested by ${interaction.member.user.username}`,
                   iconURL: `https://cdn.discordapp.com/avatars/${interaction.member.user.id}/${interaction.member.user.avatar}`,
