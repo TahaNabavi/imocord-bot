@@ -5,7 +5,7 @@ module.exports = {
   async execute(interaction) {
     await interaction.reply({
       content: "",
-      ephemeral: true,
+      // ephemeral: true,
       embeds: [
         new EmbedBuilder()
           .setColor("White")
