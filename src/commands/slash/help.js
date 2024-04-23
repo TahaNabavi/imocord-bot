@@ -36,7 +36,8 @@ module.exports = {
               inline: true,
             },
             { name: "</website:1230602814171123822>", value: "** وبسایت ما **", inline: true },
-            { name: "</discord:1230603281596940348>", value: "** دیسکورد ما **", inline: true }
+            { name: "</discord:1230603281596940348>", value: "** دیسکورد ما **", inline: true },
+            { name: "</emoji-mixer:1232337756072710184>", value: "** میکس کردن دو ایموجی با هم **", inline: true }
           ),
       ],
     });

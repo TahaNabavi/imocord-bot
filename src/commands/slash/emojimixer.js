@@ -42,7 +42,7 @@ module.exports = {
       return await interaction.editReply({ content: response });
     } else if (!output.body.results[0]) {
       return await interaction.editReply({ content: response });
-    } else if (eString.stratsWith("<") || eString.endsWith(">")) {
+    } else if (eString.startsWith("<") || eString.endsWith(">")) {
       return await interaction.editReply({ content: response });
     }
 
