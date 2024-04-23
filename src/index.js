@@ -16,6 +16,7 @@ const SCcustompack = require("./commands/slash/customPack");
 const SCwebsite = require("./commands/slash/website");
 const SCdiscord = require("./commands/slash/discord");
 const SChelp = require("./commands/slash/help");
+const OCemojiMixer = require("./commands/slash/emojimixer");
 
 const SCObanner = require("./commands/slash/Obanner");
 
@@ -122,6 +123,8 @@ client.on("interactionCreate", async (interaction) => {
       SChelp.execute(interaction);
     } else if (commandName === "change-bot-banner") {
       SCObanner.execute(interaction, client);
+    } else if (commandName === "emoji-mixer"){
+      OCemojiMixer.execute(interaction)
     } else return;
   } else return;
 });

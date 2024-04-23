@@ -1,5 +1,9 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const onlyEmoji = require("emoji-aware").onlyEmoji();
+
+
+
+
+const onlyEmoji = require("emoji-aware").onlyEmoji;
 const superagent = require("superagent");
 const config = require("../../../config.json");
 
